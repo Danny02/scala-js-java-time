@@ -3,6 +3,7 @@ package java.time
 import scala.scalajs.js
 
 import java.time.chrono.{IsoEra, Era, IsoChronology, ChronoLocalDate}
+import java.time.format.DateTimeFormatter
 import java.time.temporal._
 
 final class LocalDate private (year: Int, month: Month, dayOfMonth: Int)
@@ -431,8 +432,9 @@ object LocalDate {
       ofEpochDay(temporal.getLong(ChronoField.EPOCH_DAY))
   }
 
+  def parse(text: CharSequence): LocalDate = DateTimeFormatter.ISO_LOCAL_DATE.parse(text).asInstanceOf[LocalDate]
+
   // TODO
-  // def parse(text: CharSequence): LocalDate
   // def parse(text: CharSequence,
   //     formatter: java.time.format.DateTimeFormatter): LocalDate
 }

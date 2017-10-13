@@ -1,6 +1,7 @@
 package java.time
 
 import scala.scalajs.js
+import java.time.format.DateTimeFormatter
 
 import java.time.temporal._
 
@@ -365,8 +366,7 @@ object LocalTime {
   def from(temporal: TemporalAccessor): LocalTime =
     ofNanoOfDay(temporal.getLong(NANO_OF_DAY))
 
-  // Not implemented
-  // def parse(text: CharSequence): LocalTime
+  def parse(text: CharSequence): LocalTime = DateTimeFormatter.ISO_LOCAL_TIME.parse(text).asInstanceOf[LocalTime]
 
   // Not implemented
   // def parse(text: CharSequence, formatter: DateTimeFormatter): LocalTime

@@ -51,6 +51,11 @@ lazy val root: Project = project.in(file(".")).
             <name>Nicolas Stucki</name>
             <url>https://github.com/nicolasstucki/</url>
           </developer>
+          <developer>
+            <id>Danny02</id>
+            <name>Daniel Heinrich</name>
+            <url>https://github.com/danny02/</url>
+          </developer>
         </developers>
     ),
     pomIncludeRepository := { _ => false }

@@ -1,6 +1,7 @@
 package java.time
 
 import scala.scalajs.js
+import java.time.format.DateTimeFormatter
 
 import java.time.temporal._
 
@@ -335,7 +336,6 @@ object Instant {
       ofEpochSecond(temporal.getLong(INSTANT_SECONDS), temporal.getLong(NANO_OF_SECOND))
   }
 
-  // Not implemented
-  // def parse(text: CharSequence): Instant
+  def parse(text: CharSequence): Instant = DateTimeFormatter.ISO_INSTANT.parse(text).asInstanceOf[Instant]
 
 }
